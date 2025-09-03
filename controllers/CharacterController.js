@@ -1,4 +1,4 @@
-const Character = require("../models/Character");
+const Character = require("../models/CharacterModel");
 
 // Obtener todos los personajes
 const getCharacters = async (req, res) => {

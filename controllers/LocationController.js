@@ -1,4 +1,4 @@
-const Location = require("../models/Location");
+const Location = require("../models/LocationModels");
 
 // Obtener todas las localizaciones
 const getLocations = async (req, res) => {
