@@ -8,10 +8,19 @@
   },
   "author": "Santiago",
   "license": "ISC",
-  "description": "",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^17.2.1",
-    "express": "^5.1.0"
-  }
+    "express": "^5.1.0",
+    "moongose": "^1.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Santiago9111/aplicaciones_hibridas_medina_morrone_tp1.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Santiago9111/aplicaciones_hibridas_medina_morrone_tp1/issues"
+  },
+  "homepage": "https://github.com/Santiago9111/aplicaciones_hibridas_medina_morrone_tp1#readme",
+  "description": ""
 }
