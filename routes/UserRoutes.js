@@ -1,60 +1,18 @@
 const express = require("express");
-const User = require("../models/UserModel");
+const {
+  getUsers,
+  getUserById,
+  createUser,
+  updateUser,
+  deleteUser
+} = require("../controllers/UserController");
 
 const router = express.Router();
 
-// Obtener todos los usuarios
-router.get("/", async (req, res) => {
-  try {
-    const users = await User.find();
-    res.json(users);
-  } catch (error) {
-    res.status(500).json({ message: error.message });
-  }
-});
-
-// Obtener usuario por ID
-router.get("/:id", async (req, res) => {
-  try {
-    const user = await User.findById(req.params.id);
-    if (!user) return res.status(404).json({ message: "Usuario no encontrado" });
-    res.json(user);
-  } catch (error) {
-    res.status(500).json({ message: error.message });
-  }
-});
-
-// Crear usuario
-router.post("/", async (req, res) => {
-  try {
-    const newUser = new User(req.body);
-    const savedUser = await newUser.save();
-    res.status(201).json(savedUser);
-  } catch (error) {
-    res.status(400).json({ message: error.message });
-  }
-});
-
-// Actualizar usuario
-router.put("/:id", async (req, res) => {
-  try {
-    const updatedUser = await User.findByIdAndUpdate(req.params.id, req.body, { new: true });
-    if (!updatedUser) return res.status(404).json({ message: "Usuario no encontrado" });
-    res.json(updatedUser);
-  } catch (error) {
-    res.status(400).json({ message: error.message });
-  }
-});
-
-// Eliminar usuario
-router.delete("/:id", async (req, res) => {
-  try {
-    const deletedUser = await User.findByIdAndDelete(req.params.id);
-    if (!deletedUser) return res.status(404).json({ message: "Usuario no encontrado" });
-    res.json({ message: "Usuario eliminado" });
-  } catch (error) {
-    res.status(500).json({ message: error.message });
-  }
-});
+router.get("/", getUsers);
+router.get("/:id", getUserById);
+router.post("/", createUser);
+router.put("/:id", updateUser);
+router.delete("/:id", deleteUser);
 
 module.exports = router;

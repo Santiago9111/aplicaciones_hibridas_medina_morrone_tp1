@@ -1,6 +1,5 @@
 const Character = require("../models/CharacterModel");
 
-// Obtener todos los personajes
 const getCharacters = async (req, res) => {
   try {
     const { name, role } = req.query;
