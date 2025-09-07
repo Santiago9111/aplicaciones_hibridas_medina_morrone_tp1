@@ -5,7 +5,7 @@ const {
   createLocation,
   updateLocation,
   deleteLocation
-} = require("../controllers/locationController");
+} = require("../controllers/LocationController");
 
 const router = express.Router();
 

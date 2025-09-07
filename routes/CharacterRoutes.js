@@ -5,7 +5,7 @@ const {
   createCharacter,
   updateCharacter,
   deleteCharacter
-} = require("../controllers/characterController");
+} = require("../controllers/CharacterController");
 
 const router = express.Router();
 
