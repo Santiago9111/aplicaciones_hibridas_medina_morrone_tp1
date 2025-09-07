@@ -14,19 +14,94 @@ app.use(express.json());
 
 app.get("/", (req, res) => {
   res.send(`
-    <h1> The Last of Us API</h1>
-    <p>Bienvenido a la API de The Last of Us. Endpoints disponibles:</p>
-    <ul>
-      <li><a href="/api/users">/api/users</a></li>
-      <li><a href="/api/characters">/api/characters</a></li>
-      <li><a href="/api/locations">/api/locations</a></li>
-    </ul>
-    <footer style="margin-top:30px;">
-      <p>Alumno: Santiago Medina</p>
-      <p>Materia: Aplicaciones Híbridas</p>
-      <p>Docente: [Completar]</p>
-      <p>Comisión: [Completar]</p>
-    </footer>
+   <!DOCTYPE html>
+    <html lang="es">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>The Last of Us API</title>
+      <style>
+        body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+          background: #1b1b1b;
+          color: #eee;
+          text-align: center;
+        }
+        header {
+          background: #2d2d2d;
+          padding: 20px;
+        }
+        h1 {
+          margin: 0;
+          color: #76c893;
+        }
+        p {
+          font-size: 18px;
+          margin: 10px 0 20px;
+        }
+        .endpoints {
+          display: flex;
+          justify-content: center;
+          gap: 20px;
+          flex-wrap: wrap;
+          margin: 20px auto;
+          max-width: 800px;
+        }
+        .card {
+          background: #2a2a2a;
+          padding: 20px;
+          border-radius: 12px;
+          box-shadow: 0px 4px 8px rgba(0,0,0,0.4);
+          width: 220px;
+          transition: transform 0.2s;
+        }
+        .card:hover {
+          transform: scale(1.05);
+        }
+        .card a {
+          text-decoration: none;
+          color: #76c893;
+          font-weight: bold;
+        }
+        footer {
+          margin-top: 40px;
+          padding: 15px;
+          background: #2d2d2d;
+          font-size: 14px;
+        }
+      </style>
+    </head>
+    <body>
+      <header>
+        <h1>🌿 The Last of Us API</h1>
+        <p>Bienvenido a la API de personajes y localizaciones</p>
+      </header>
+      <main>
+        <div class="endpoints">
+          <div class="card">
+            <h3>👤 Usuarios</h3>
+            <a href="/api/users">Usuario</a>
+          </div>
+          <div class="card">
+            <h3>🧍 Personajes</h3>
+            <a href="/api/characters">Personajes</a>
+          </div>
+          <div class="card">
+            <h3>🌍 Localizaciones</h3>
+            <a href="/api/locations">Localizaciones</a>
+          </div>
+        </div>
+      </main>
+      <footer>
+        <p>Alumnos: Santiago Medina y Tomas Morrone.</p>
+        <p>Materia: Aplicaciones Híbridas.</p>
+        <p>Docente: Jonatahan Emanuel Cruz.</p>
+        <p>Comisión: DWM3AP.</p>
+      </footer>
+    </body>
+    </html>
   `);
 });
 
