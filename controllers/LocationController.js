@@ -1,11 +1,9 @@
 const Location = require("../models/LocationModel");
 
-// Obtener todas las localizaciones
 const getLocations = async (req, res) => {
   try {
     const { name, region } = req.query;
     let filter = {};
-
     if (name) filter.name = new RegExp(name, "i");
     if (region) filter.region = region;
 
@@ -16,7 +14,6 @@ const getLocations = async (req, res) => {
   }
 };
 
-// Obtener localización por ID
 const getLocationById = async (req, res) => {
   try {
     const location = await Location.findById(req.params.id);
@@ -27,7 +24,6 @@ const getLocationById = async (req, res) => {
   }
 };
 
-// Crear localización
 const createLocation = async (req, res) => {
   try {
     const newLocation = new Location(req.body);
@@ -38,14 +34,9 @@ const createLocation = async (req, res) => {
   }
 };
 
-// Actualizar localización
 const updateLocation = async (req, res) => {
   try {
-    const updatedLocation = await Location.findByIdAndUpdate(
-      req.params.id,
-      req.body,
-      { new: true }
-    );
+    const updatedLocation = await Location.findByIdAndUpdate(req.params.id, req.body, { new: true });
     if (!updatedLocation) return res.status(404).json({ message: "Localización no encontrada" });
     res.json(updatedLocation);
   } catch (error) {
@@ -53,7 +44,6 @@ const updateLocation = async (req, res) => {
   }
 };
 
-// Eliminar localización
 const deleteLocation = async (req, res) => {
   try {
     const deletedLocation = await Location.findByIdAndDelete(req.params.id);
@@ -64,10 +54,4 @@ const deleteLocation = async (req, res) => {
   }
 };
 
-module.exports = {
-  getLocations,
-  getLocationById,
-  createLocation,
-  updateLocation,
-  deleteLocation
-};
+module.exports = { getLocations, getLocationById, createLocation, updateLocation, deleteLocation };

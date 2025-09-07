@@ -4,7 +4,6 @@ const getCharacters = async (req, res) => {
   try {
     const { name, role } = req.query;
     let filter = {};
-
     if (name) filter.name = new RegExp(name, "i");
     if (role) filter.role = role;
 
@@ -15,7 +14,6 @@ const getCharacters = async (req, res) => {
   }
 };
 
-// Obtener personaje por ID
 const getCharacterById = async (req, res) => {
   try {
     const character = await Character.findById(req.params.id);
@@ -26,7 +24,6 @@ const getCharacterById = async (req, res) => {
   }
 };
 
-// Crear personaje
 const createCharacter = async (req, res) => {
   try {
     const newCharacter = new Character(req.body);
@@ -37,14 +34,9 @@ const createCharacter = async (req, res) => {
   }
 };
 
-// Actualizar personaje
 const updateCharacter = async (req, res) => {
   try {
-    const updatedCharacter = await Character.findByIdAndUpdate(
-      req.params.id,
-      req.body,
-      { new: true }
-    );
+    const updatedCharacter = await Character.findByIdAndUpdate(req.params.id, req.body, { new: true });
     if (!updatedCharacter) return res.status(404).json({ message: "Personaje no encontrado" });
     res.json(updatedCharacter);
   } catch (error) {
@@ -52,7 +44,6 @@ const updateCharacter = async (req, res) => {
   }
 };
 
-// Eliminar personaje
 const deleteCharacter = async (req, res) => {
   try {
     const deletedCharacter = await Character.findByIdAndDelete(req.params.id);
@@ -63,10 +54,4 @@ const deleteCharacter = async (req, res) => {
   }
 };
 
-module.exports = {
-  getCharacters,
-  getCharacterById,
-  createCharacter,
-  updateCharacter,
-  deleteCharacter
-};
+module.exports = { getCharacters, getCharacterById, createCharacter, updateCharacter, deleteCharacter };
