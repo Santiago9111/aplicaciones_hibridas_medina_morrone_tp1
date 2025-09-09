@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const characterSchema = new mongoose.Schema({
+const humanSchema = new mongoose.Schema({
   name: { type: String, required: true },
   age: { type: Number },
   role: { type: String },
@@ -8,4 +8,4 @@ const characterSchema = new mongoose.Schema({
   image: { type: String }
 }, { timestamps: true });
 
-module.exports = mongoose.model("Character", characterSchema);
+module.exports = mongoose.model("Human", humanSchema);

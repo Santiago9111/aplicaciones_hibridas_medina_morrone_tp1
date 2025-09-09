@@ -2,8 +2,8 @@ const express = require("express");
 const dotenv = require("dotenv");
 const connectDB = require("./config/db");
 
-const characterRoutes = require("./routes/CharacterRoutes");
-const locationRoutes = require("./routes/LocationRoutes");
+const humanRoutes = require("./routes/HumanRoutes");
+const infectedRoutes = require("./routes/InfectedRoutes");
 const userRoutes = require("./routes/UserRoutes");
 
 dotenv.config();
@@ -76,7 +76,7 @@ app.get("/", (req, res) => {
     <body>
       <header>
         <h1>🌿 The Last of Us API</h1>
-        <p>Bienvenido a la API de personajes y localizaciones</p>
+        <p>Bienvenido a la API de humanos e infectados</p>
       </header>
       <main>
         <div class="endpoints">
@@ -85,12 +85,12 @@ app.get("/", (req, res) => {
             <a href="/api/users">Usuario</a>
           </div>
           <div class="card">
-            <h3>🧍 Personajes</h3>
-            <a href="/api/characters">Personajes</a>
+            <h3>🧍 Humanos</h3>
+            <a href="/api/humans">Humanos</a>
           </div>
           <div class="card">
-            <h3>🌍 Localizaciones</h3>
-            <a href="/api/locations">Localizaciones</a>
+            <h3> Infectados</h3>
+            <a href="/api/infecteds">Infectados</a>
           </div>
         </div>
       </main>
@@ -106,8 +106,8 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/users", userRoutes);
-app.use("/api/characters", characterRoutes);
-app.use("/api/locations", locationRoutes);
+app.use("/api/humans", humanRoutes);
+app.use("/api/infecteds", infectedRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Servidor corriendo en puerto ${PORT}`));
