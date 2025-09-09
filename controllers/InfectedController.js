@@ -2,10 +2,10 @@ const Infected = require("../models/InfectedModel");
 
 const getInfecteds = async (req, res) => {
   try {
-    const { name, region } = req.query;
+    const { name, stage } = req.query;
     let filter = {};
     if (name) filter.name = new RegExp(name, "i");
-    if (region) filter.region = region;
+    if (stage) filter.stage = stage;
 
     const infecteds = await Infected.find(filter);
     res.json(infecteds);
