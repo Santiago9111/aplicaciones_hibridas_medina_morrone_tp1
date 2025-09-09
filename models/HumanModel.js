@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const humanSchema = new mongoose.Schema({
   name: { type: String, required: true },
   age: { type: Number },
-  role: { type: String },
+  status: { type: String },
   description: { type: String },
   image: { type: String }
 }, { timestamps: true });

@@ -2,10 +2,10 @@ const Human = require("../models/HumanModel");
 
 const getHumans = async (req, res) => {
   try {
-    const { name, role } = req.query;
+    const { name, status } = req.query;
     let filter = {};
     if (name) filter.name = new RegExp(name, "i");
-    if (role) filter.role = role;
+    if (status) filter.status = status;
 
     const humans = await Human.find(filter);
     res.json(humans);
