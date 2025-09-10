@@ -7,7 +7,7 @@ Datos del proyecto:
 Alumnos: Santiago Medina y Tomas Morrone.
 Materia: Aplicaciones Híbridas.
 Docente: Jonathan Emanuel Cruz. 
-Comisión: DWM4AP
+Comisión: DWM4AP.
 
 Tecnologías utilizadas
 
@@ -51,38 +51,26 @@ PUT /api/users/:id => Actualizar usuario
 
 DELETE /api/users/:id => Eliminar usuario
 
-2. Personajes
+2. Humanos
 
-GET /api/characters => Listar todos los personajes
+GET /api/humans => Listar todos los humanos
 
-GET /api/characters/:id => Obtener personaje por ID
+GET /api/humans/:id => Obtener humano por ID
 
-POST /api/characters => Crear personaje
+POST /api/humans => Crear humano
 
-PUT /api/characters/:id => Actualizar personaje
+PUT /api/humans/:id => Actualizar humano
 
-DELETE /api/characters/:id => Eliminar personaje
+DELETE /api/humans/:id => Eliminar humano
 
-Filtros disponibles:
+3. Infectados
 
-/api/characters?name=Ellie => Buscar por nombre
+GET /api/infecteds => Listar todos los infectados
 
-/api/characters?role=Protagonista => Filtrar por rol
+GET /api/infecteds/:id => Obtener infectado por ID
 
-Localizaciones
+POST /api/infecteds => Crear infectado
 
-GET /api/locations => Listar todas las localizaciones
+PUT /api/infecteds/:id => Actualizar infectado
 
-GET /api/locations/:id => Obtener localización por ID
-
-POST /api/locations => Crear localización
-
-PUT /api/locations/:id => Actualizar localización
-
-DELETE /api/locations/:id => Eliminar localización
-
-Filtros disponibles:
-
-/api/locations?name=Boston => Buscar por nombre
-
-/api/locations?region=EEUU => Filtrar por región
+DELETE /api/infecteds/:id => Eliminar infectado
