@@ -32,9 +32,6 @@ Instalación y uso
 
 Configurar variables de entorno (.env):
 
-MONGODB_URI=mongodb+srv://santiago:thelastofus13@cluster.mongodb.net/tlou?retryWrites=true&w=majority
-PORT=5000
-
 Ejecutar el servidor en desarrollo:
 
 npm run dev
