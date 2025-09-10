@@ -8,4 +8,4 @@ const humanSchema = new mongoose.Schema({
   image: { type: String }
 }, { timestamps: true });
 
-module.exports = mongoose.model("Human", humanSchema);
+module.exports = mongoose.model("Humans", humanSchema);
